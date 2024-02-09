@@ -1,23 +1,20 @@
 <?php
-$name=$_POST['name'];
-$visitoremail=$_POST['email'];
-$visitoremail=$_POST['subject'];
-$message=$_POST['message'];
+$name = $_POST['name'];
+$visitoremail = $_POST['email'];
+$subject = $_POST['subject']; // Corrected variable name
+$message = $_POST['message'];
 
-$email_from ='edusuccessaca@gmail.com';
-$email_subject ='New Form Submission';
-$email_body = "user name: $name.\n". 
-               "user email: $visitoremail.\n". 
-               "subject: $subject.\n". 
-               "user message: $message.\n";
+$email_from = 'edusuccessaca@gmail.com';
+$email_subject = 'New Form Submission';
+$email_body = "user name: $name.\n" . 
+              "user email: $visitoremail.\n" . 
+              "subject: $subject.\n" . // Corrected variable name
+              "user message: $message.\n";
 
 $to = 'edusuccessaca@gmail.com';
-$header = "From : $email_from \r\n";
-$headers .="reply-to :$visitoremail \r\n";
+$headers = "From: $email_from \r\n"; // Using consistent variable name
+$headers .= "Reply-To: $visitoremail \r\n"; // Using consistent variable name
 
-mail($to,$emailsubject,$emailbody,$headers);
-header("location:contact.html");
-
-
-
+mail($to, $email_subject, $email_body, $headers); // Using consistent variable names
+header("location: contact.html");
 ?>
